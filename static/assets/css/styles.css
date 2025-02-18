@@ -1,0 +1,115 @@
+h3, h5{
+  color: #0000a1;
+}
+
+.banner{
+    background-color: #0000a1;
+  }
+
+  .nav-item > a{
+    color: #0000a1;
+  }
+
+  .nav-item > a:hover{
+    color: #f40000;
+  }
+
+  .dropdown-menu > li > a{
+    color: #0000a1;
+  }
+
+  .dropdown-menu > li > a:hover{
+    color: #f40000;
+  }
+
+  
+
+  .dropdown-indicator{
+    color: #0000a1;
+  }
+
+  .btn-outline-primary{
+    color: #0000a1;
+    border: 2px solid #0000a1;
+  }
+
+  .btn-outline-primary:hover{
+    background-color: #0000a1 ;
+    color: white;
+    border: none;
+    /* border: 2px solid #2102c9; */
+  }
+
+  .heroh1{
+    color: #0000a1;
+  }
+
+  .btn-primary{
+    background-color: #0000a1;
+    color: white;
+  }
+
+  .btn-primary:hover{
+    background-color: #d7d7fd;
+    color: #0000a1;
+  }
+
+  .btn-warning{
+    background-color: red;
+    color: white;
+    border: none;
+    
+  }
+
+  .btn-warning:hover{
+    background-color: #ffd2d2;
+    color: red;
+  }
+
+  .bluecolor{
+    color: #0000a1;
+  }
+
+  .darkblue{
+    color: #221a53;
+  }
+
+  .bg-holder {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+  .bg-primary{
+    background-color: #0000a1;
+  }
+
+  .brand-icon{
+    background: none;
+    color: white;
+    border-radius: 50%;
+    border: 1px solid white;
+    padding: 1rem;
+  }
+
+  .brand-icon:hover{
+    text-shadow: 4px 1px 9px rgb(255, 255, 255);
+  }
+.active{
+  color: red;
+}
+
+
+
+@media only screen and (max-width:350px) {
+  .btn-primary, .btn-warning{
+    width: 100%;
+  }
+
+  .heroh1{
+    text-align: center;
+    font-size: 1.5rem;
+    text-shadow: 4px 1px 9px rgb(255, 255, 255);
+  }
+
+}
