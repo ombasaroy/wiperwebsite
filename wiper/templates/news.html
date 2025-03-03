@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+  <!-- <section> begin ============================-->
+    <section>
+      <div class="bg-holder overlay" style="background-image:url({% static 'assets/img/news.jpg' %});background-position:center bottom;"></div>
+      <!--/.bg-holder-->
+      <div class="container">
+        <div class="row pt-6" data-inertia='{"weight":1.5}'>
+          <div class="col-md-8 text-white" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+            <div class="overflow-hidden">
+              <h1 class="text-white fs-4 fs-md-5 mb-0 lh-1" data-zanim-xs='{"delay":0}'>News Room</h1>
+              <div class="nav" aria-label="breadcrumb" role="navigation" data-zanim-xs='{"delay":0.1}'>
+                <ol class="breadcrumb fs-1 ps-0 fw-bold">
+                  <li class="breadcrumb-item"><a class="text-white" href="{% url 'index' %}">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">News Room</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- end of .container-->
+    </section>
+    <!-- <section> close ============================-->
+
+
+    <!-- <section> begin ============================-->
+    <section class="bg-100">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card"><a href="{% url 'index' %}"><img class="card-img-top" src="{% static 'assets/img/9.jpg' %}" alt="Featured Image" /></a>
+              <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                <div class="overflow-hidden"><a href="{% url 'index' %}">
+                    <h5 data-zanim-xs='{"delay":0}'>NEC removes Hon. Farah Maalim from his role as the Deputy Party Leader</h5>
+                  </a></div>
+                <div class="overflow-hidden">
+                  <p class="text-500" data-zanim-xs='{"delay":0.1}'>By Paloma</p>
+                </div>
+                <div class="overflow-hidden">
+                  <p class="mt-0" data-zanim-xs='{"delay":0.2}'>During the NEC/PG meeting of January 22, members made a resolution that Hon. Farah ceases being the Deputy Party Leader effective immediately...</p>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="d-inline-block" data-zanim-xs='{"delay":0.3}'><a class="d-flex align-items-center" href="{% url 'index' %}">Read More<div class="overflow-hidden ms-2" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'><span class="d-inline-block fw-medium">&xrarr;</span></div></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card"><a href="{% url 'index' %}"><img class="card-img-top" src="{% static 'assets/img/10.jpg' %}" alt="Featured Image" /></a>
+              <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                <div class="overflow-hidden"><a href="{% url 'index' %}">
+                    <h5 data-zanim-xs='{"delay":0}'>Party Leader winds up his Coast region tour</h5>
+                  </a></div>
+                <div class="overflow-hidden">
+                  <p class="text-500" data-zanim-xs='{"delay":0.1}'>By Admin</p>
+                </div>
+                <div class="overflow-hidden">
+                  <p class="mt-0" data-zanim-xs='{"delay":0.2}'>Kalonzo Musyoka shut down Kongowea Market as thousands turned up to hear his message on the second day of his Coastal tour...</p>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="d-inline-block" data-zanim-xs='{"delay":0.3}'><a class="d-flex align-items-center" href="{% url 'index' %}">Read More<div class="overflow-hidden ms-2" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'><span class="d-inline-block fw-medium">&xrarr;</span></div></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card"><a href="{% url 'index' %}"><img class="card-img-top" src="{% static 'assets/img/11.jpg' %}" alt="Featured Image" /></a>
+              <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                <div class="overflow-hidden"><a href="{% url 'index' %}">
+                    <h5 data-zanim-xs='{"delay":0}'>Mombasa County Leadership Changes</h5>
+                  </a></div>
+                <div class="overflow-hidden">
+                  <p class="text-500" data-zanim-xs='{"delay":0.1}'>By Admin</p>
+                </div>
+                <div class="overflow-hidden">
+                  <p class="mt-0" data-zanim-xs='{"delay":0.2}'>The Secretary General has made changes to the Mombasa County Party Leadership ...</p>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="d-inline-block" data-zanim-xs='{"delay":0.3}'><a class="d-flex align-items-center" href="{% url 'index' %}">Read More<div class="overflow-hidden ms-2" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'><span class="d-inline-block fw-medium">&xrarr;</span></div></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto mx-auto mt-4">
+            <nav class="mt-5" aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link lh-sm" href="#" aria-label="Previous"><span aria-hidden="true">«</span><span class="sr-only">Previous</span></a></li>
+                <li class="page-item"><a class="page-link lh-sm" href="#!">1</a></li>
+                <li class="page-item active"><a class="page-link lh-sm" href="#!">2</a></li>
+                <li class="page-item"><a class="page-link lh-sm" href="#!">3</a></li>
+                <li class="page-item"><a class="page-link lh-sm" href="#!">4</a></li>
+                <li class="page-item"><a class="page-link lh-sm" href="#!" aria-label="Next"><span aria-hidden="true">»</span><span class="sr-only">Next</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div><!-- end of .container-->
+    </section>
+{% endblock %}

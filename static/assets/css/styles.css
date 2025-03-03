@@ -96,12 +96,16 @@ h3, h5{
     text-shadow: 4px 1px 9px rgb(255, 255, 255);
   }
 .active{
-  color: red;
+  color: red !important;
+}
+
+.fa-brands{
+  font-size: 3rem;
 }
 
 
 
-@media only screen and (max-width:350px) {
+@media only screen and (max-width:600px) {
   .btn-primary, .btn-warning{
     width: 100%;
   }
