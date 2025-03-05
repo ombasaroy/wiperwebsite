@@ -38,7 +38,7 @@
         <!-- <section> close ============================-->
       
       <!-- <section> begin ============================-->
-      <section class="bg-white text-center">
+      {% comment %} <section class="bg-white text-center">
         <div class="container">
           <div class="row justify-content-center text-center">
             <div class="col-10 col-md-6">
@@ -66,8 +66,11 @@
             </div>
           </div>
         </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
+      </section> {% endcomment %}
+      <!-- <section> close ============================-->
       <!-- ============================================-->
+
+      
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
@@ -251,115 +254,24 @@
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
-      <section class="bg-100 text-center pt-4">
-        <div class="container">
-          <div class="text-center mb-6">
-            <h3 class="fs-2 fs-md-3">Party leadership</h3>
-            <hr class="short" data-zanim-xs='{"from":{"opacity":0,"width":0},"to":{"opacity":1,"width":"4.20873rem"},"duration":0.8}' data-zanim-trigger="scroll" />
-          </div>
-          <div class="row">
-            <div class="col-sm-6 col-lg-4    ">
-              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-3.jpg' %}" alt="Kalonzo Musyoka" />
-                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                  <div class="overflow-hidden">
-                    <h5 data-zanim-xs='{"delay":0}'>H.E Dr. Stephen Kalonzo Musyoka, SC, EGH</h5>
-                  </div>
-                  <div class="overflow-hidden">
-                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Party Leader</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mt-4  mt-lg-0 ">
-              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-5.jpg' %}" alt="Andrew Sunkuli" />
-                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                  <div class="overflow-hidden">
-                    <h5 data-zanim-xs='{"delay":0}'>Andrew Sunkuli</h5>
-                  </div>
-                  <div class="overflow-hidden">
-                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>National Chairman</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mt-4 mt-sm-0  ">
-              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-4.jpg' %}" alt="Shakila Abdalla" />
-                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                  <div class="overflow-hidden">
-                    <h5 data-zanim-xs='{"delay":0}'>Sen. Shakila Abdalla</h5>
-                  </div>
-                  <div class="overflow-hidden">
-                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Secretary General</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mt-4   ">
-              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-6.jpg' %}" alt="Anne Kanyi" />
-                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                  <div class="overflow-hidden">
-                    <h5 data-zanim-xs='{"delay":0}'>Anne Kanyi</h5>
-                  </div>
-                  <div class="overflow-hidden">
-                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Deputy Chairperson</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mt-4   ">
-              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-7.jpg' %}" alt="Mutula Kilonzo Jr" />
-                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                  <div class="overflow-hidden">
-                    <h5 data-zanim-xs='{"delay":0}'>Gov. Mutula Kilonzo Jr.</h5>
-                  </div>
-                  <div class="overflow-hidden">
-                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Deputy Chairman</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mt-4   ">
-              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-8.jpg' %}" alt="Victor Ogeto" />
-                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                  <div class="overflow-hidden">
-                    <h5 data-zanim-xs='{"delay":0}'>Victor Swanya Ogeto</h5>
-                  </div>
-                  <div class="overflow-hidden">
-                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Deputy Chairman</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mt-4   ">
-              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-9.jpg' %}" alt="Gideon Mulyungi" />
-                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                  <div class="overflow-hidden">
-                    <h5 data-zanim-xs='{"delay":0}'>Hon. Gideon Mulyungi</h5>
-                  </div>
-                  <div class="overflow-hidden">
-                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>National Treasurer</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mt-4   ">
-              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-10.jpg' %}" alt="Robert Mbui" />
-                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                  <div class="overflow-hidden">
-                    <h5 data-zanim-xs='{"delay":0}'>Hon. Robert Mbui</h5>
-                  </div>
-                  <div class="overflow-hidden">
-                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>National Organising Secretary</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
+      {% include 'includes/leadership.html' %}
 
 
+      <section class="pt-0 pb-0">
+        <div class="swiper theme-slider" data-swiper='{"spaceBetween":5,"loop":true,"loopedSlides":5,"thumb":{"spaceBetween":5,"slidesPerView":5,"loop":true,"freeMode":true,"grabCursor":true,"loopedSlides":5,"centeredSlides":true,"slideToClickedSlide":true,"watchSlidesVisibility":true,"watchSlidesProgress":true},"slideToClickedSlide":true}'>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="img-fluid" src="{% static 'assets/img/necpg.jpg' %}" alt="image" /></div>
+            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally1.jpg' %}" alt="image" /></div>
+            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally2.jpg' %}" alt="image" /></div>
+            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally3.jpg' %}" alt="image" /></div>
+            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally4.jpg' %}" alt="image" /></div>
+          </div>
+          <div class="swiper-nav">
+            <div class="swiper-button-prev"><span class="fas fa-chevron-left"></span></div>
+            <div class="swiper-button-next"><span class="fas fa-chevron-right"></span></div>
+          </div>
+        </div>
+      </section>
       
 
       <!-- ============================================-->
@@ -428,6 +340,14 @@
           </div>
         </div><!-- end of .container-->
       </section><!-- <section> close ============================-->
+
+
+
+        <!-- GOOGLE MAPS ============================================-->
+      <div style="margin: 0">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18973.802050994902!2d36.74490631102551!3d-1.3256025261337117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1be48d140f6b%3A0xf478b138f6026d06!2sWiper%20Party%20HQ!5e0!3m2!1sen!2ske!4v1739698019584!5m2!1sen!2ske" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
 
 
         <div class="bg-200 py-6">

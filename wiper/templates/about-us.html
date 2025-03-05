@@ -4,9 +4,9 @@
 {% block title %} About Us {% endblock %}
 
 {% block main%}
-<section class="bg-100">
+<section class="bg-100 pb-0">
     <div class="container">
-      <div class="row g-0">
+      {% comment %} <div class="row g-0">
         <div class="col-lg-4 py-3 py-lg-0 position-relative" style="min-height:400px; background-position: top">
           <div class="bg-holder rounded-ts-lg rounded-lg-bs-lg rounded-te-lg rounded-lg-te-0" style="background-image:url(../assets/img/ceo.jpg);"></div>
           <!--/.bg-holder-->
@@ -19,23 +19,154 @@
             <h6 class="text-500 fw-semi-bold" data-zanim-xs='{"delay":0.4}'>UK office</h6>
           </div>
         </div>
-      </div>
-      <div class="row mt-6">
+      </div> {% endcomment %}
+      <div class="row">
         <div class="col">
-          <h3 class="text-center fs-2 fs-md-3">Company Overview</h3>
+          <h3 class="text-center fs-2 fs-md-3">Our History</h3>
           <hr class="short" data-zanim-xs='{"from":{"opacity":0,"width":0},"to":{"opacity":1,"width":"4.20873rem"},"duration":0.8}' data-zanim-trigger="scroll" />
         </div>
-        <div class="col-12">
-          <div class="bg-white px-3 mt-6 px-0 py-5 px-lg-5 rounded-3">
-            <h5>Earning the right</h5>
-            <p class="mt-3">As a first order business consulting firm, we help companies, foundations and individuals make a difference. Our work gets to the heart of the matter. We break silos because it takes more than any one check or policy or letter to tackle big issues like economic security, human rights or climate sustainability. We prescribe a custom formula of advocacy, collaboration, investment, philanthropy, policy and new ways of doing business in order to help you make progress.</p>
-            <blockquote class="blockquote my-5 ms-lg-6" style="max-width: 700px;">
-              <h5 class="fw-medium ms-3 mb-0">But how do we do it? We like to call it earning the right, walking the talk and playing the game &hellip;</h5>
-            </blockquote>
-            <p class="column-lg-2 dropcap">Elixir serves to help people with creative ideas succeed. Our platform empowers millions of people — from individuals and local artists to entrepreneurs shaping the world’s most iconic businesses — to share their stories and create an impactful, stylish, and easy-to-manage online presence. The Cambridge office is the home of the Risk management practice. We work to assure the safe performance of complex critical systems; develop safety leadership and culture; manage safety and risk in high-hazard industries; understand complex project risks, measure and report risk performance. We work across a wide range of industries and public sector organizations that include upstream and downstream oil and gas; rail and road transportation; construction; and gas utilities and distribution. We work worldwide in Europe, Middle East and Asia, Africa and South America based out of our offices in Cambridge, UK and Milan, Italy.</p>
+        <div class="col-12 ">
+          <div class="bg-white px-3 mt-2 px-0 py-2 px-lg-5 rounded-3">
+            {% comment %} <h5>Earning the right</h5> {% endcomment %}
+            <p class="mt-3" style="text-align: justify;">The Wiper Democratic Movement (WDM) was founded in 2006 by Kenyans committed to promoting democracy, 
+              social justice, and good governance. Our vision is to eliminate entrenched socio-economic inequalities, corruption, and negative 
+              ethnicity while fostering national unity and development. Dedicated to ensuring transparent, accountable, and people-centered 
+              leadership, WDM champions equitable resource distribution, grassroots development, and policies that uplift marginalized 
+              communities.</p>
+
+            {% comment %} <blockquote class="blockquote my-5 ms-lg-6" style="max-width: 700px;">
+              <h5 class="fw-medium ms-3 mb-0">But how do we do it? We like to call it earning the right, walking the talk and playing the 
+                game &hellip;</h5>
+            </blockquote> {% endcomment %}
+
+            <p class="column-lg-2" style="text-align: justify;">Wiper Democratic Movement upholds the Constitution of Kenya 2010 and the rule of law, conducting free, fair, and transparent 
+              elections within the party while promoting leadership based on integrity, competence, and inclusivity. We advocate for policies 
+              that drive economic growth, youth empowerment, gender equality, and peaceful coexistence among all communities. Our guiding 
+              principles include strengthening democracy by encouraging citizen participation in governance, ensuring ethical leadership 
+              at all levels, promoting fairness in resource distribution, maintaining accountability in all party affairs, and giving a 
+              voice to all Kenyans, including women, youth, and marginalized groups. Our core values—democracy, integrity, equity, transparency, 
+              and inclusivity—serve as the foundation for all our actions and policies. We believe in building a united, prosperous, and just 
+              Kenya where all citizens have equal opportunities to succeed. WDM invites all Kenyans to join the movement and be part of shaping 
+              the nation’s future through ethical leadership and progressive governance.</p>
           </div>
         </div>
       </div>
     </div><!-- end of .container-->
   </section>
-{% endblock%}
+
+
+  <section class="bg-100 text-center pt-4">
+        <div class="container">
+          <div class="text-center mb-6">
+            <h3 class="fs-2 fs-md-3">Party leadership</h3>
+            <hr class="short" data-zanim-xs='{"from":{"opacity":0,"width":0},"to":{"opacity":1,"width":"4.20873rem"},"duration":0.8}' data-zanim-trigger="scroll" />
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-lg-4    ">
+              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-3.jpg' %}" alt="Kalonzo Musyoka" />
+                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                  <div class="overflow-hidden">
+                    <h5 data-zanim-xs='{"delay":0}'>H.E Dr. Stephen Kalonzo Musyoka, SC, EGH</h5>
+                  </div>
+                  <div class="overflow-hidden">
+                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Party Leader</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mt-4  mt-lg-0 ">
+              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-5.jpg' %}" alt="Andrew Sunkuli" />
+                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                  <div class="overflow-hidden">
+                    <h5 data-zanim-xs='{"delay":0}'>Andrew Sunkuli</h5>
+                  </div>
+                  <div class="overflow-hidden">
+                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>National Chairman</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mt-4 mt-sm-0  ">
+              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-4.jpg' %}" alt="Shakila Abdalla" />
+                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                  <div class="overflow-hidden">
+                    <h5 data-zanim-xs='{"delay":0}'>Sen. Shakila Abdalla</h5>
+                  </div>
+                  <div class="overflow-hidden">
+                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Secretary General</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mt-4   ">
+              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-6.jpg' %}" alt="Anne Kanyi" />
+                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                  <div class="overflow-hidden">
+                    <h5 data-zanim-xs='{"delay":0}'>Anne Kanyi</h5>
+                  </div>
+                  <div class="overflow-hidden">
+                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Deputy Chairperson</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mt-4   ">
+              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-7.jpg' %}" alt="Mutula Kilonzo Jr" />
+                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                  <div class="overflow-hidden">
+                    <h5 data-zanim-xs='{"delay":0}'>Gov. Mutula Kilonzo Jr.</h5>
+                  </div>
+                  <div class="overflow-hidden">
+                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Deputy Chairman</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mt-4   ">
+              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-8.jpg' %}" alt="Victor Ogeto" />
+                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                  <div class="overflow-hidden">
+                    <h5 data-zanim-xs='{"delay":0}'>Victor Swanya Ogeto</h5>
+                  </div>
+                  <div class="overflow-hidden">
+                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>Deputy Chairman</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mt-4   ">
+              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-9.jpg' %}" alt="Gideon Mulyungi" />
+                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                  <div class="overflow-hidden">
+                    <h5 data-zanim-xs='{"delay":0}'>Hon. Gideon Mulyungi</h5>
+                  </div>
+                  <div class="overflow-hidden">
+                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>National Treasurer</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mt-4   ">
+              <div class="card h-100"><img class="card-img-top" src="{% static 'assets/img/portrait-10.jpg' %}" alt="Robert Mbui" />
+                <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                  <div class="overflow-hidden">
+                    <h5 data-zanim-xs='{"delay":0}'>Hon. Robert Mbui</h5>
+                  </div>
+                  <div class="overflow-hidden">
+                    <h6 class="fw-normal text-500" data-zanim-xs='{"delay":0.1}'>National Organising Secretary</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- end of .container-->
+      </section><!-- <section> close ============================-->
+
+
+        
+
+        {% include 'includes/leadership.html' %}
+
+
+
+{% endblock%} 

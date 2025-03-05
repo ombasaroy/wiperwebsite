@@ -63,7 +63,7 @@
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{% url 'about-us' %}">Our History</a></li>
-                  <li><a class="dropdown-item" href="">Leadership</a></li>
+                  <li><a class="dropdown-item" href="">Party Organs</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -71,10 +71,11 @@
               </li>
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="">Downloads</a></li>
-                  <li><a class="dropdown-item" href="">Notices</a></li>
-                  <li><a class="dropdown-item" href="">Financial Statements</a></li>
-                  <li><a class="dropdown-item" href="">Careers</a></li>
+                  <li><a class="dropdown-item" href="{% url 'downloads' %}">Downloads</a></li>
+                  <li><a class="dropdown-item" href="{% url 'notices' %}">Notices</a></li>
+                  <li><a class="dropdown-item" href="{% url 'financial-statements' %}">Financial Statements</a></li>
+                  <li><a class="dropdown-item" href="{% url 'careers' %}">Careers</a></li>
+                  <li><a class="dropdown-item" href="{% url 'tenders' %}">Tenders</a></li>
                 </ul>
               </li>
               <li class="nav-item"><a class="nav-link {% if nav == 'contact' %} active {% endif %}" href="{% url 'contact' %}">Contact</a></li>

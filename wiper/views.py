@@ -25,4 +25,26 @@ def contact(request):
     return render(request, 'contact.html', context)
 
 def about_us(request):
-    return render(request, 'about-us.html')
+    context={}
+    return render(request, 'about-us.html', context)
+
+
+def downloads(request):
+    context={}
+    return render(request, 'downloads.html')
+
+def notices(request):
+    context={}
+    return render(request, 'notices.html', context)
+
+def careers(request):
+    context={}
+    return render(request, 'careers.html', context)
+
+def tenders(request):
+    context={}
+    return render(request, 'tenders.html', context)
+
+def financial_statements(request):
+    context={}
+    return render(request, 'financial-statements.html', context)
