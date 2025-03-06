@@ -6,12 +6,45 @@
     <!-- ===============================================-->
     <main class="main" id="top">
 
-      <!-- ============================================-->
+
+      <section class="pt-0 pb-2 hero-slider">
+        <div class="swiper theme-slider" data-swiper='{"spaceBetween":5,"loop":true,"loopedSlides":5,"thumb":{"spaceBetween":5,"slidesPerView":5,"loop":true,"freeMode":true,"grabCursor":true,"loopedSlides":5,"centeredSlides":true,"slideToClickedSlide":true,"watchSlidesVisibility":true,"watchSlidesProgress":true},"slideToClickedSlide":true}'>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img class="img-fluid" src="{% static 'assets/img/necpg.jpg' %}" alt="image" /></div>
+            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally1.jpg' %}" alt="image" /></div>
+            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally2.jpg' %}" alt="image" /></div>
+            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally3.jpg' %}" alt="image" /></div>
+            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally4.jpg' %}" alt="image" /></div>
+          </div>
+          <div class="swiper-nav">
+            <div class="swiper-button-prev"><span class="fas fa-chevron-left"></span></div>
+            <div class="swiper-button-next"><span class="fas fa-chevron-right"></span></div>
+          </div>
+        </div>
+      </section>
+
+
+
       <!-- <section> begin ============================-->
-      <section class="py-0">
+        <section class="py-12 text-center text-md-start" style="background-image:url({% static 'assets/img/calltoaction.jpg'%}); background-repeat: no-repeat; background-size: cover;">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md">
+                <h3 class="text-white mb-0">One People, One Nation</h3>
+              </div>
+              <div class="col-md-auto mt-md-0 mt-4"><a class="btn btn-warning rounded-pill" href="{% url 'index' %}">Join the Movement</a></div>
+            </div>
+          </div>
+        </section>
+
+
+
+      
+      <!-- <section> begin ============================-->
+      {% comment %} <section class="py-0">
         <div class="bg-holder" style="background-image:url({% static 'assets/img/hero.png' %}); background-repeat: no-repeat; background-size: cover"></div>
         <!--/.bg-holder-->
-        <div class="container">
+        <div class="container-fluid">
           <div class="row min-vh-100 py-8 align-items-center" data-inertia='{"weight":1.5}'>
             <div class="col-sm-8 col-lg-7">
               <div class="overflow-hidden">
@@ -30,12 +63,12 @@
               </div>
             </div>
           </div>
-        </div><!-- end of .container-->
-      </section>
+        </div>
+      </section> {% endcomment %}
 
 
 
-        <!-- <section> close ============================-->
+        
       
       <!-- <section> begin ============================-->
       {% comment %} <section class="bg-white text-center">
@@ -65,14 +98,14 @@
                 unions, professional associations, co-operative societies & student unions.</p>
             </div>
           </div>
-        </div><!-- end of .container-->
+        </div>
       </section> {% endcomment %}
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
+      
+      
 
       
 
-      <!-- ============================================-->
+      
       <!-- <section> begin ============================-->
       <section class="bg-100 pt-6 pb-6">
         <div class="container">
@@ -110,12 +143,12 @@
             </div>
           </div>
         </div>
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
+      </section>
+      
 
 
 
-      <!-- ============================================-->
+      
       <!-- <section> begin ============================-->
       <section class="mt-0 pt-6 pb-6">
         <div class="container">
@@ -128,47 +161,30 @@
             <div class="col-lg-6 px-lg-5 mt-6 mt-lg-0" data-zanim-timeline="{}" data-zanim-trigger="scroll">
               <div class="overflow-hidden">
                 <div class="px-4 px-sm-0" data-zanim-xs='{"delay":0}'>
-                  <h5 class="fs-0 fs-lg-1"><span class="fas fa-comment-dots fs-1 me-2" data-fa-transform="flip-h"></span>Vision</h5>
+                  <h5 class="fs-0 fs-lg-1">Vision</h5>
                   <p class="mt-3">To promote integrity, inclusivity, and social justice as the core national values towards a prosperous Kenya.</p>
                 </div>
               </div>
               <div class="overflow-hidden">
                 <div class="px-4 px-sm-0 mt-5" data-zanim-xs='{"delay":0}'>
-                  <h5 class="fs-0 fs-lg-1"><span class="fas fa-palette fs-1 me-2" data-fa-transform="shrink-1"></span>Ideology</h5>
+                  <h5 class="fs-0 fs-lg-1">Ideology</h5>
                     <p class="mt-3">The Party is founded on principles of social democracy and upholds ideals that foster equitable distribution of the Nation’s Resources and opportunities amongst all citizens. </p>
                 </div>
               </div>
               <div class="overflow-hidden">
                 <div class="px-4 px-sm-0 mt-5" data-zanim-xs='{"delay":0}'>
-                  <h5 class="fs-0 fs-lg-1"><span class="fas fa-stopwatch fs-1 me-2" data-fa-transform="grow-1"></span>Mission</h5>
+                  <h5 class="fs-0 fs-lg-1">Mission</h5>
                   <p class="mt-3">To provide access to transparent, accountable and people  centred leadership  for  the  benefit  of  present  and  future  generations  of Kenya. </p>
                 </div>
               </div>
             </div>
           </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
+        </div>
+      </section>
+      
 
 
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-6 text-center text-md-start" style="background-color: #0000a1">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md">
-              <h3 class="text-white mb-0">One People, One Nation</h3>
-            </div>
-            <div class="col-md-auto mt-md-0 mt-4"><a class="btn btn-warning rounded-pill" href="{% url 'index' %}">Join the Movement</a></div>
-          </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-      <!-- ============================================-->
+      
       <!-- <section> begin ============================-->
       <section class="text-center">
         <div class="container">
@@ -245,38 +261,22 @@
               </div>
             </div>
           </div>
-        </div><!-- end of .container-->
+        </div>
       </section><!--
       <section> close ============================-->
-      <!-- ============================================-->
+      
 
 
 
-      <!-- ============================================-->
+      
       <!-- <section> begin ============================-->
       {% include 'includes/leadership.html' %}
 
-
-      <section class="pt-0 pb-0">
-        <div class="swiper theme-slider" data-swiper='{"spaceBetween":5,"loop":true,"loopedSlides":5,"thumb":{"spaceBetween":5,"slidesPerView":5,"loop":true,"freeMode":true,"grabCursor":true,"loopedSlides":5,"centeredSlides":true,"slideToClickedSlide":true,"watchSlidesVisibility":true,"watchSlidesProgress":true},"slideToClickedSlide":true}'>
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img class="img-fluid" src="{% static 'assets/img/necpg.jpg' %}" alt="image" /></div>
-            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally1.jpg' %}" alt="image" /></div>
-            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally2.jpg' %}" alt="image" /></div>
-            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally3.jpg' %}" alt="image" /></div>
-            <div class="swiper-slide"> <img class="img-fluid" src="{% static 'assets/img/rally4.jpg' %}" alt="image" /></div>
-          </div>
-          <div class="swiper-nav">
-            <div class="swiper-button-prev"><span class="fas fa-chevron-left"></span></div>
-            <div class="swiper-button-next"><span class="fas fa-chevron-right"></span></div>
-          </div>
-        </div>
-      </section>
       
 
-      <!-- ============================================-->
+      
       <!-- <section> begin ============================-->
-      <section class="bg-100">
+      <section class="bg-100 pt-0">
         <div class="container">
           <div class="text-center mb-6">
             <h3 class="fs-2 fs-md-3">Latest News</h3>
@@ -338,8 +338,8 @@
               </div>
             </div>
           </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
+        </div>
+      </section>
 
 
 
@@ -351,7 +351,7 @@
 
 
         <div class="bg-200 py-6">
-          <div class="container">
+          <div class="container-fluid">
             <div class="row align-items-center" data-zanim-timeline="{}" data-zanim-trigger="scroll">
               <div class="col-4 col-md-2 my-3 overflow-hidden"><img class="img-fluid" src="{% static 'assets/img/partner/logo2.png' %}" alt="partnerco" data-zanim-xs="{}" /></div>
               <div class="col-4 col-md-2 my-3 overflow-hidden"><img class="img-fluid" src="{% static 'assets/img/partner/logo3.png' %}" alt="tvc" data-zanim-xs="{}" /></div>
