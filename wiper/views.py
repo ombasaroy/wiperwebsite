@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Document, Publication
+from django.shortcuts import render, redirect, get_object_or_404
+from django.core.paginator import Paginator
+from .models import *
 
 
 # Create your views here.
@@ -16,8 +17,17 @@ def custom_404_view(request, exception):
 
 
 def news(request):
-    context={'nav': 'news'}
+    posts_list = Post.objects.all().order_by('-created_at')
+    paginator = Paginator(posts_list, 6)  # Show 6 posts per page
+
+    page_number = request.GET.get('page')
+    posts = paginator.get_page(page_number)
+    context={'nav': 'news', 'posts': posts}
     return render(request, 'news.html', context)
+
+
+def post_detail(request):
+    return render(request, 'post-detail.html')
 
 
 def contact(request):

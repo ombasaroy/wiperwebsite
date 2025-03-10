@@ -103,6 +103,12 @@ h3, h5{
   font-size: 3rem;
 }
 
+ .rounded-pill2{
+  font-size: 2rem;
+}
+
+
+
 
 
 @media only screen and (max-width:600px) {
@@ -118,6 +124,10 @@ h3, h5{
 
   .hero-slider{
     margin-top: 50px;
+  }
+
+  .rounded-pill2{
+    font-size: 14px;
   }
 
 }
