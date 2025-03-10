@@ -26,9 +26,9 @@ def news(request):
     return render(request, 'news.html', context)
 
 
-def post_detail(request):
-    return render(request, 'post-detail.html')
-
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    return render(request, 'post-detail.html', {'post': post})
 
 def contact(request):
     context={'nav': 'contact'}

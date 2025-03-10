@@ -21,26 +21,57 @@ class Publication(models.Model):
     
     
 
-class Post(models.Model):
+class Author(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    description = models.TextField()
+    image = models.ImageField(upload_to='author_images/', blank=True, null=True)
+    facebook_link = models.URLField(blank=True, null=True)
+    twitter_link = models.URLField(blank=True, null=True)
+    linkedin_link = models.URLField(blank=True, null=True)
+    slug = models.SlugField(max_length=150, unique=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)  
+    updated_at = models.DateTimeField(auto_now=True)  
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base_slug = slugify(self.name)
+            super().save(*args, **kwargs)  # Save first to get ID
+            self.slug = f"{base_slug}-{self.id}"
+            self.save(update_fields=['slug'])  # Save again with unique slug
+
+    def __str__(self):
+        return self.name
     
-    AUTHOR_CHOICES = [
-        ('admin', 'Admin'),
-        ('paloma gatabaki', 'Paloma Gatabaki'),
-    ]
     
-    CATEGORY_CHOICES= [
-        ('press release', 'Press Release'),
-        ('opinion', 'Opinion'),
-        ('notice', 'Notice'),
-    ]
     
+class Category(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=150, unique=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+    
+    
+
+class Post(models.Model):    
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     content = RichTextField()
     featured_image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
-    author = models.CharField(max_length=50, choices=AUTHOR_CHOICES, blank=True)
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='Press Release')
-    custom_author = models.CharField(max_length=50, blank=True, null=True)
+    author = models.ForeignKey('Author', on_delete=models.CASCADE, related_name="posts")  # One-to-Many relationship
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, blank=True, related_name="posts")      
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)  # Updates on every save
 

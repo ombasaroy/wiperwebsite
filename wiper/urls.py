@@ -12,7 +12,6 @@ urlpatterns = [
     path('careers/', views.careers, name='careers'),
     path('tenders/', views.tenders, name='tenders'),
     path('financial-statements/', views.financial_statements, name='financial-statements'),
-    # path('<slug:slug>/', views.post_detail, name='post_detail'),
-    path('post-detail/', views.post_detail, name='post_detail'),
+    path('<slug:slug>/', views.post_detail, name='post_detail'),
     
 ]

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Document, Publication, Post
+from .models import *
 
 # Register your models here.
 admin.site.register(Document)
@@ -19,3 +19,18 @@ class PostAdmin(admin.ModelAdmin):
     featured_image_preview.short_description = "Featured Image"
 
 admin.site.register(Post, PostAdmin)
+
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'created_at', 'updated_at')  # Fields to show in the admin list
+    search_fields = ('name',)  # Enable search by name
+    prepopulated_fields = {"slug": ("name",)}  # Auto-generate slug from name
+    ordering = ('-created_at',)  # Order by newest first
+    
+    
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'created_at', 'updated_at')
+    prepopulated_fields = {"slug": ("name",)}
