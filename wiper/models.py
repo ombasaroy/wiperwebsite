@@ -33,15 +33,20 @@ class Author(models.Model):
     updated_at = models.DateTimeField(auto_now=True)  
 
     def save(self, *args, **kwargs):
-        if not self.slug:
+        if not self.slug:  
             base_slug = slugify(self.name)
-            super().save(*args, **kwargs)  # Save first to get ID
-            self.slug = f"{base_slug}-{self.id}"
-            self.save(update_fields=['slug'])  # Save again with unique slug
+            new_slug = base_slug
+            counter = 1
+            while Author.objects.filter(slug=new_slug).exists():
+                new_slug = f"{base_slug}-{counter}"
+                counter += 1
+            self.slug = new_slug  # Assign unique slug before saving
+        
+        super().save(*args, **kwargs)  # Save only once
 
     def __str__(self):
         return self.name
-    
+
     
     
 class Category(models.Model):
@@ -70,8 +75,8 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     content = RichTextField()
     featured_image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
-    author = models.ForeignKey('Author', on_delete=models.CASCADE, related_name="posts")  # One-to-Many relationship
-    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, blank=True, related_name="posts")      
+    author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True, related_name="posts")  # One-to-Many relationship
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, blank=True, null=True, related_name="posts")      
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)  # Updates on every save
 

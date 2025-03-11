@@ -78,23 +78,23 @@
                     <h5 data-zanim-xs='{"delay":0}'>{{ post.title }}</h5>
                   </a>
                 </div>
-                <div class="overflow-hidden">
+                {% comment %} <div class="overflow-hidden">
                   <p class="text-500" data-zanim-xs='{"delay":0.1}'>{{ post.created_at }}</p>
-                </div>
-                <div class="overflow-hidden">
+                </div> {% endcomment %}
+                {% comment %} <div class="overflow-hidden">
                   <p class="" data-zanim-xs='{"delay":0.2}'>{{ post.content|truncatewords:30|safe }}</p>
-                </div>
-                <div class="overflow-hidden">
+                </div> {% endcomment %}
+                {% comment %} <div class="overflow-hidden">
                   {% if post.author %}
                   <p class="text-500" data-zanim-xs='{"delay":0.1}'>By: {{ post.author|title }}</p>
                   {% elif post.custom_author %}
                   <p class="text-500" data-zanim-xs='{"delay":0.1}'>By: {{ post.custom_author|title }}</p>
                   {% endif %}
-                </div>
+                </div> {% endcomment %}
                 <div class="overflow-hidden">
                   <div class="d-inline-block" data-zanim-xs='{"delay":0.3}'>
                     <a class="d-flex align-items-center" href="{% url 'post_detail' post.slug %}">
-                      Read More
+                      Read article
                       <div class="overflow-hidden ms-2" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'>
                         <span class="d-inline-block fw-medium">&xrarr;</span>
                       </div>

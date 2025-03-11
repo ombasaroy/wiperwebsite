@@ -76,10 +76,14 @@
           <div class="px-2">
             <div class="card mb-5">
               <div class="card-body p-5">
-                <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll"><img class="rounded-circle" data-zanim-xs='{"delay":0}' src="../assets/img/portrait-8.jpg" alt="Author" />
-                  <h5 class="text-capitalize mt-3 mb-0" data-zanim-xs='{"delay":0.1}'>thomas been</h5>
-                  <p class="mb-0 mt-3" data-zanim-xs='{"delay":0.2}'>Flattering high rise easy care flared fit - cut straight leg that flares at the ankle comfy tight. Regular fit viscose elastane leather black wool.</p>
-                  <div class="pt-4" data-zanim-xs='{"delay":0.3}'><a class="d-inline-block" href="#!"><span class="fab fa-linkedin fs-2 mx-2 text-400"></span></a><a class="d-inline-block" href="#!"><span class="fab fa-twitter-square fs-2 mx-2 text-400"></span></a><a class="d-inline-block" href="#!"><span class="fab fa-facebook-square fs-2 mx-2 text-400"></span></a></div>
+                <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll"><img class="rounded-circle img-fluid" width=100 data-zanim-xs='{"delay":0}' src="{{ post.author.image.url }}" alt="Author" />
+                  <h5 class="text-capitalize mt-3 mb-0" data-zanim-xs='{"delay":0.1}'>{{ post.author.name }}</h5>
+                  <p class="mb-0 mt-3" data-zanim-xs='{"delay":0.2}'>{{post.author.description }}</p>
+                  <div class="pt-4" data-zanim-xs='{"delay":0.3}'>
+                    <a class="d-inline-block" href="{{ post.author.linkedin_link}}"><span class="fab fa-linkedin fs-2 mx-2 text-400"></span></a>
+                    <a class="d-inline-block" href="{{ post.author.twitter_link}}"><span class="fab fa-twitter-square fs-2 mx-2 text-400"></span></a>
+                    <a class="d-inline-block" href="{{ post.author.facebook_link}}"><span class="fab fa-facebook-square fs-2 mx-2 text-400"></span></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -151,14 +155,10 @@
               <div class="card-body p-5">
                 <h5>Tags</h5>
                 <ul class="nav tags mt-3 fs--1">
-                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">Advisory</a></li>
-                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">Finance</a></li>
-                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">Ideas</a></li>
-                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">Data</a></li>
-                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">Market</a></li>
-                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">Tax</a></li>
-                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">Consulting</a></li>
-                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">Accounting</a></li>
+                  
+                  {% for category in categories %}                  
+                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">{{ category.name }}</a></li>
+                  {% endfor %}
                 </ul>
               </div>
             </div>

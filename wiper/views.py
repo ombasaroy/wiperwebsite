@@ -6,9 +6,10 @@ from .models import *
 # Create your views here.
 
 def index(request):
+    posts = Post.objects.all().order_by('-created_at')[:3]
     documents = Document.objects.all()
     publications = Publication.objects.all()
-    context = {'documents': documents, 'publications': publications, 'nav': 'index'}
+    context = {'documents': documents, 'publications': publications, 'posts': posts, 'nav': 'index'}
     return render(request, 'index.html', context)
 
 
@@ -28,7 +29,10 @@ def news(request):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    return render(request, 'post-detail.html', {'post': post})
+    categories = Category.objects.all()
+    context={'post': post, 'categories': categories}
+    
+    return render(request, 'post-detail.html', context)
 
 def contact(request):
     context={'nav': 'contact'}
