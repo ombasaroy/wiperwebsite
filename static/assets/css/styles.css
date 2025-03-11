@@ -130,4 +130,12 @@ h3, h5{
     font-size: 14px;
   }
 
+  .post-title{
+    font-size: 18px;
+  }
+
+  .post-header{
+    font-size: 12px;
+  }
+
 }
