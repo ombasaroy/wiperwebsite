@@ -1,7 +1,36 @@
-{% extends 'base.html' %}
+{% comment %} {% extends 'base.html' %} {% endcomment %}
 {% load static %}
+
 {% block title %} Downloads {% endblock %}
 
-{% block main %}
-    
-{% endblock %}
+{% block main%}
+<section class="bg-100 pb-0 mt-2">
+    <div class="container">
+      
+        <div class="row">
+            <div class="col-12 ">
+                <h3 class="text-center fs-2 fs-md-3">Downloads</h3>
+
+                {% for pdf in pdfs %}
+                <div class="bg-white  mt-2 mb-2 px-0 p-4 rounded-3">
+                    </ul><span style="font-weight: 600; color: #0000a1; padding-left: 2em;">{{pdf.name}}</span>
+                    <a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0" href="{% url 'index' %}">Download</a>
+                </div>
+                {% endfor %}
+
+
+                <ul class="list-unstyled footer-links">
+
+                    {% for pdf in pdfs %}
+                    <li class="mb-3"><a class="text-white" href="{{pdf.file.url}}">{{pdf.name}}</a></li>
+                    {% endfor %}
+                  </ul>
+
+            </div>
+
+        </div>
+    </div><!-- end of .container-->
+  </section>
+
+
+{% endblock%} 

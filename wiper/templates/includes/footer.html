@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-white ms-lg-auto">
+          <h5 style="color: #b0b0b0; ">Downloads</h5>
+        {% comment %} <ul class="list-unstyled footer-links">
+            
+            <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1798O1ViCGFk2xkGDlH20LlUCotKfFK6W/view?usp=drive_link">Party Constitution</a></li>
+            <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1lJQoMY_a_WCQNtdMad4fo1f2koNVSMse/view?usp=drive_link">Nomination Rules</a></li>
+            <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/19lfVzuVMmEIW6drU6wF88fHw3Tj-WWMf/view?usp=drive_link">Disciplinary Rules</a></li>
+            <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1hFs1RwtIcubrCR9B5OOxkBNE8XwazcD2/view?usp=drive_link">Election Appeal Rules</a></li>
+        </ul> {% endcomment %}
+
+        <ul class="list-unstyled footer-links">
+
+          {% for pdf in pdfs %}
+          <li class="mb-3"><a class="text-white" href="{{pdf.file.url}}">{{pdf.name}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-white ms-lg-auto">
+        <h5 style="color: #b0b0b0">Resources</h5>
+        <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1XqlFJjGJ9kZ9wKN_t1c_RcSdV0JZBsEr/view?usp=drive_link">How to Register</a></li>
+            <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1O7rZxltoDbpwuO0lBr5zYL3IkMhBG9EC/view?usp=drive_link">Elected Leaders</a></li>
+            <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1EhptWmwwBitI09pVuPvueaEm9CoDuhRY/view?usp=sharing">2023 Financial Statements</a></li>
+            <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1ZgixhnFevB9ejVw8SnG-J_92klX0_2Vn/view?usp=sharing">NEC Members</a></li>
+        </ul>
+      </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-white ms-lg-auto">
+        <h5 style="color: #b0b0b0">Office Location</h5>
+        <ul class="list-unstyled">
+          <li class="mb-3">Wiper House</li>
+          <li class="mb-3">Sunrise Court</li>
+          <li class="mb-3">Kufuga Road - Off Langata Road</li>
+          <li class="mb-3">Karen Nairobi</li>
+          <li class="mb-3">+254 720 513513</li>
+          <li class="mb-3">wipermovement2013@gmail.com</li>
+        </ul>
+      </div>
+    <hr class="mt-3" style="height: 1px; background-color: white; border: none;">
+
+</div>

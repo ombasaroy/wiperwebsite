@@ -4,6 +4,8 @@
 {% block main %}
 <section class="bg-100">
     <div class="container">
+    </ul><a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0" href="{% url 'news' %}">Go back to Newsroom</a>
+
       <div class="overflow-hidden mb-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
 
         <h4 data-zanim-xs='{"delay":0.1}' class="post-title">{{ post.title }}</h4>
@@ -18,7 +20,7 @@
       <div class="row">
         <div class="col-lg-8">
           <div class="card mb-6"> <img class="card-img-top" src="{{ post.featured_image.url }}" alt="new image" />
-            <div class="card-body p-0">
+            <div class="card-body p-2 text-justify">
               <p class="">{{ post.content|safe }}</p>
             
             </div>
@@ -69,7 +71,10 @@
               </div>
             </div>
           </div> {% endcomment %}
-          
+
+
+
+          </ul><a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0" href="{% url 'news' %}">Go back to Newsroom</a>
         </div>
         
         <div class="col-lg-4 text-center ms-auto mt-5 mt-lg-0">
@@ -77,8 +82,8 @@
             <div class="card mb-5">
               <div class="card-body p-5">
                 <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll"><img class="rounded-circle img-fluid" width=100 data-zanim-xs='{"delay":0}' src="{{ post.author.image.url }}" alt="Author" />
-                  <h5 class="text-capitalize mt-3 mb-0" data-zanim-xs='{"delay":0.1}'>{{ post.author.name }}</h5>
-                  <p class="mb-0 mt-3" data-zanim-xs='{"delay":0.2}'>{{post.author.description }}</p>
+                  <h6 class="text-capitalize mt-3 mb-0" data-zanim-xs='{"delay":0.1}'>Posted by <i>{{ post.author.name }} </i></h6>
+                  <p class="mb-0 mt-3" data-zanim-xs='{"delay":0.2}' style="font-size: 0.8rem;">{{post.author.description }}</p>
                   <div class="pt-4" data-zanim-xs='{"delay":0.3}'>
                     <a class="d-inline-block" href="{{ post.author.linkedin_link}}"><span class="fab fa-linkedin fs-2 mx-2 text-400"></span></a>
                     <a class="d-inline-block" href="{{ post.author.twitter_link}}"><span class="fab fa-twitter-square fs-2 mx-2 text-400"></span></a>
@@ -88,21 +93,23 @@
               </div>
             </div>
             <div class="mb-5">
-              <h5 class="mb-4">Related Articles</h5>
+              <h5 class="mb-4">Recent Articles</h5>
               <div class="bg-white pb-5 rounded-3">
                 <div class="swiper news-slider pb-4" data-swiper='{"loop":true,"slidesPerView":1,"pagination":{"el":".swiper-pagination","type":"bullets","clickable":true}}'>
                   <div class="swiper-wrapper">
+
+                    {% for recent_post in recent_posts%}
                     <div class="swiper-slide">
-                      <div class="card"><a href="news.html"><img class="card-img-top" src="../assets/img/9.jpg" alt="Featured Image" /></a>
+                      <div class="card"><a href="news.html"><img class="card-img-top" src="{{ recent_post.featured_image.url }}" alt="Featured Image" /></a>
                         <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
                           <div class="overflow-hidden"><a href="news.html">
-                              <h5 data-zanim-xs='{"delay":0}'>Tax impacts of lease mean accounting change</h5>
+                              <h6 data-zanim-xs='{"delay":0}' style="font-size: 16px;">{{recent_post.title}}</h6>
                             </a></div>
+                          {% comment %} <div class="overflow-hidden">
+                            <p class="text-500" data-zanim-xs='{"delay":0.1}'>{{recent_post.author}}</p>
+                          </div> {% endcomment %}
                           <div class="overflow-hidden">
-                            <p class="text-500" data-zanim-xs='{"delay":0.1}'>By Paul O'Sullivan</p>
-                          </div>
-                          <div class="overflow-hidden">
-                            <p class="mt-3" data-zanim-xs='{"delay":0.2}'>HMRC released a consultation document to flag some potential tax impacts that a forthcoming change...</p>
+                            <p class="mt-3" data-zanim-xs='{"delay":0.2}'>{{recent_post.content|safe|slice:100}}</p>
                           </div>
                           <div class="overflow-hidden">
                             <div class="d-inline-block" data-zanim-xs='{"delay":0.3}'><a class="d-flex align-items-center" href="news.html">Learn More<div class="overflow-hidden ms-2" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'><span class="d-inline-block fw-medium">&xrarr;</span></div></a></div>
@@ -110,48 +117,16 @@
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="card"><a href="news.html"><img class="card-img-top" src="../assets/img/10.jpg" alt="Featured Image" /></a>
-                        <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                          <div class="overflow-hidden"><a href="news.html">
-                              <h5 data-zanim-xs='{"delay":0}'>What brexit means for data protection law</h5>
-                            </a></div>
-                          <div class="overflow-hidden">
-                            <p class="text-500" data-zanim-xs='{"delay":0.1}'>By Enrico Ambrosi</p>
-                          </div>
-                          <div class="overflow-hidden">
-                            <p class="mt-3" data-zanim-xs='{"delay":0.2}'>Assuming that the referendum is not ignored completely, there are two possible futures for the UK...</p>
-                          </div>
-                          <div class="overflow-hidden">
-                            <div class="d-inline-block" data-zanim-xs='{"delay":0.3}'><a class="d-flex align-items-center" href="news.html">Learn More<div class="overflow-hidden ms-2" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'><span class="d-inline-block fw-medium">&xrarr;</span></div></a></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card"><a href="news.html"><img class="card-img-top" src="../assets/img/11.jpg" alt="Featured Image" /></a>
-                        <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
-                          <div class="overflow-hidden"><a href="news.html">
-                              <h5 data-zanim-xs='{"delay":0}'>The growing meanace of social engineering fraud</h5>
-                            </a></div>
-                          <div class="overflow-hidden">
-                            <p class="text-500" data-zanim-xs='{"delay":0.1}'>By Robson</p>
-                          </div>
-                          <div class="overflow-hidden">
-                            <p class="mt-3" data-zanim-xs='{"delay":0.2}'>Social engineering involves the collection of information from various sources about a target...</p>
-                          </div>
-                          <div class="overflow-hidden">
-                            <div class="d-inline-block" data-zanim-xs='{"delay":0.3}'><a class="d-flex align-items-center" href="news.html">Learn More<div class="overflow-hidden ms-2" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'><span class="d-inline-block fw-medium">&xrarr;</span></div></a></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    {% endfor %}
+
+
                   </div>
                   <div class="swiper-pagination"></div>
                 </div>
               </div>
             </div>
-            <div class="card">
+
+            {% comment %} <div class="card">
               <div class="card-body p-5">
                 <h5>Tags</h5>
                 <ul class="nav tags mt-3 fs--1">
@@ -161,10 +136,13 @@
                   {% endfor %}
                 </ul>
               </div>
-            </div>
+            </div> {% endcomment %}
+
           </div>
         </div>
       </div>
+
+      
     </div><!-- end of .container-->
   </section>
 {% endblock %}

@@ -5,12 +5,31 @@ from .models import *
 
 # Create your views here.
 
+def basefile(request):
+    pdfs = PDFDocument.objects.all()
+    context = {
+        'pdfs': pdfs 
+        }
+    return render(request, 'base.html', context)
+
+
+
 def index(request):
     posts = Post.objects.all().order_by('-created_at')[:3]
-    documents = Document.objects.all()
-    publications = Publication.objects.all()
-    context = {'documents': documents, 'publications': publications, 'posts': posts, 'nav': 'index'}
+    context = {
+        'posts': posts, 
+        'nav': 'index'
+        }
     return render(request, 'index.html', context)
+
+
+
+def downloads(request):
+    pdfs = PDFDocument.objects.all()
+    context = {
+        'pdfs': pdfs
+        }
+    return render(request, 'downloads.html', context)
 
 
 def custom_404_view(request, exception):
@@ -29,8 +48,10 @@ def news(request):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    categories = Category.objects.all()
-    context={'post': post, 'categories': categories}
+    categories = Category.objects.all()    
+    recent_posts = Post.objects.all().order_by('-created_at').exclude(id=post.id).distinct()[:3]
+    
+    context={'post': post, 'categories': categories, 'recent_posts': recent_posts}
     
     return render(request, 'post-detail.html', context)
 

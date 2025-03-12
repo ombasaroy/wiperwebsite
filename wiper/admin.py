@@ -2,9 +2,6 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
-admin.site.register(Document)
-admin.site.register(Publication)
-
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at', 'updated_at', 'featured_image_preview')
@@ -34,3 +31,9 @@ class AuthorAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'created_at', 'updated_at')
     prepopulated_fields = {"slug": ("name",)}
+    
+    
+
+@admin.register(PDFDocument)
+class PDFDocumentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'file')
