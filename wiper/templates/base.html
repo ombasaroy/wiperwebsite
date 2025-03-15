@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- ===============================================-->
+    
     <!--    Document Title-->
-    <!-- ===============================================-->
+    
     <title>Wiper Democratic Movement</title>
 
-    <!-- ===============================================-->
+    
     <!--    Favicons-->
-    <!-- ===============================================-->
+    
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/favicon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicon.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicon.png' %}">
@@ -24,9 +24,9 @@
     <meta name="theme-color" content="#ffffff">
     <script src="{% static 'vendors/overlayscrollbars/OverlayScrollbars.min.js' %}"></script>
 
-    <!-- ===============================================-->
+    
     <!--    Stylesheets-->
-    <!-- ===============================================-->
+    
     <link href="{% static 'vendors/swiper/swiper-bundle.min.css' %} " rel="stylesheet">
     <link href="{% static 'vendors/hamburgers/hamburgers.min.css' %} " rel="stylesheet">
     <link href="{% static 'vendors/loaders.css/loaders.min.css' %} " rel="stylesheet">
@@ -63,7 +63,7 @@
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{% url 'about-us' %}">Our History</a></li>
-                  <li><a class="dropdown-item" href="">Party Organs</a></li>
+                  <li><a class="dropdown-item" href="">Leadership</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -84,28 +84,21 @@
         </nav>
       </div>
     </div>
-    <!-- ===============================================-->
+    
 
 
     {% block main %}
     {% endblock %}
-
-
-
-
-
-    <!--===============================================-->
-    <!--    Footer-->
-    <!--===============================================-->
-
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
+    
+    
     <section style="background-color: #0000a1">
       <div class="container">
         
         <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-white ms-lg-auto">
                 <h5 style="color: #b0b0b0; ">Downloads</h5>
+                <hr style="height: 1px; background-color: #ffffff; border: none;">
+
               {% comment %} <ul class="list-unstyled footer-links">
                   
                   <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1798O1ViCGFk2xkGDlH20LlUCotKfFK6W/view?usp=drive_link">Party Constitution</a></li>
@@ -116,13 +109,14 @@
       
               <ul class="list-unstyled footer-links">
       
-                {% for pdf in pdfs %}
+                {% for pdf in pdf_documents %}
                 <li class="mb-3"><a class="text-white" href="{{pdf.file.url}}">{{pdf.name}}</a></li>
                 {% endfor %}
               </ul>
             </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-white ms-lg-auto">
               <h5 style="color: #b0b0b0">Resources</h5>
+              <hr style="height: 1px; background-color: #ffffff; border: none;">
               <ul class="list-unstyled">
                   <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1XqlFJjGJ9kZ9wKN_t1c_RcSdV0JZBsEr/view?usp=drive_link">How to Register</a></li>
                   <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1O7rZxltoDbpwuO0lBr5zYL3IkMhBG9EC/view?usp=drive_link">Elected Leaders</a></li>
@@ -132,6 +126,7 @@
             </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-white ms-lg-auto">
               <h5 style="color: #b0b0b0">Office Location</h5>
+              <hr style="height: 1px; background-color: #ffffff; border: none;">
               <ul class="list-unstyled">
                 <li class="mb-3">Wiper House</li>
                 <li class="mb-3">Sunrise Court</li>
@@ -151,24 +146,24 @@
 
                 <ul class="list-unstyled mt-4" style="display: flex; align-items: center; justify-content: center;">
 
-                  <li class="mb-3"><a class="text-decoration-none d-flex align-items-center" href="https://x.com/TheWiperParty"> <span class="brand-icon me-3"><span class="fab fa-twitter"></span></span>
-                  <li class="mb-3"><a class="text-decoration-none d-flex align-items-center" href="https://web.facebook.com/WiperDM"> <span class="brand-icon me-3"><span class="fab fa-facebook-f"></span></span>
+                    <li class="mb-3"><a class="text-decoration-none d-flex align-items-center" href="https://x.com/TheWiperParty"> <span class="brand-icon me-3"><span class="fab fa-twitter"></span></span></a></li>
+                    <li class="mb-3"><a class="text-decoration-none d-flex align-items-center" href="https://web.facebook.com/WiperDM"> <span class="brand-icon me-3"><span class="fab fa-facebook-f"></span></span></a></li>
           
                 </ul>
               </div>
           </div>
-      </div><!-- end of .container-->
-    </section><!-- <section> close ============================-->
-    <!-- ============================================-->
+      </div>
+    </section>
+    
 
    
       <div class="container-fluid py-2" style="text-align: center;">
         Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Wiper Democratic Movement
       </div>
 
-    <!-- ===============================================-->
+    
     <!--    JavaScripts-->
-    <!-- ===============================================-->
+    
     <script src="{% static 'vendors/popper/popper.min.js' %}"></script>
     <script src="{% static 'vendors/bootstrap/bootstrap.min.js' %} "></script>
     <script src="{% static 'vendors/is/is.min.js' %} "></script>

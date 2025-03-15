@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title  %} Careers {% endblock %}
+
+
+{% block main %}
+
+{% for pdf in pdfs %}
+    {% if pdf.category.name == "Party Documents" %}
+    {% else %}
+        <h1>No jobs</h1>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}
