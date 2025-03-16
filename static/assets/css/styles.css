@@ -107,6 +107,14 @@ h3, h5{
   font-size: 2rem;
 }
 
+ .no-jobs{
+   background-color: #ff8a8a;
+   border-radius: 25px;
+   color: #ffffff;
+   font-weight: 600;
+   text-align: center;
+   padding: 0 4rem;
+ }
 
 
 

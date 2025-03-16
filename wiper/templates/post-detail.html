@@ -11,9 +11,9 @@
         <h4 data-zanim-xs='{"delay":0.1}' class="post-title">{{ post.title }}</h4>
         
         {% if post.author %}
-        <div data-zanim-xs='{"delay":0}'><a class="d-inline-block text-500 post-header" href="#!">Posted by {{post.author|title}}</a>, &nbsp;<a class="d-inline-block text-500 post-header" href="#!">{{ post.created_at }}</a></div>
+        <div data-zanim-xs='{"delay":0}'>&nbsp;<a class="d-inline-block text-500 post-header" href="#!">{{ post.created_at }}</a></div>
         {% else %}
-        <div data-zanim-xs='{"delay":0}'><a class="d-inline-block text-500 post-header" href="#!">Date {{ post.custom_author|title }}</a>, &nbsp;<a class="d-inline-block text-500 post-header" href="#!">{{ post.created_at }}</a></div>
+        <div data-zanim-xs='{"delay":0}'>&nbsp;<a class="d-inline-block text-500 post-header" href="#!">{{ post.created_at }}</a></div>
         {% endif %}
 
       </div>

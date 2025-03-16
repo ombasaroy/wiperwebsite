@@ -1,3 +1,2 @@
 - What does 'related_name' mean
-- how can i pass records to the base file without having to fetch them on each view function?
-- Downloads has extra divs that don't display anything
+- VS Code iko not picking recent changes to files

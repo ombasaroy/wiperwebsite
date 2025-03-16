@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title  %} Party Documents {% endblock %}
+
+
+{% block main %}
+
+<section class="bg-100 pb-0">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center fs-2 fs-md-3">Party Documents</h3>
+          <hr class="short" data-zanim-xs='{"from":{"opacity":0,"width":0},"to":{"opacity":1,"width":"4.20873rem"},"duration":0.8}' data-zanim-trigger="scroll" />
+        </div>
+
+          {% for pdfdoc in pdfdocs %}
+          <div class="col-12 pt-3 mb-2" style="background-color: #f3f9ff; border-radius: 25px;">
+              <div class="rounded-3">
+                    <p class="mb-2" style="color: #0000a1; font-weight: 600;">{{ forloop.counter }}. {{ pdfdoc.name }}
+                        <a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0" href="{{ pdfdoc.file.url }}">Click to Download</a>
+                    </p>
+              </div>
+          </div>
+          {% endfor %}
+
+      </div>
+    </div>
+
+</section>
+
+{% endblock %}

@@ -8,16 +8,12 @@ from .models import *
 
 def index(request):
     posts = Post.objects.all().order_by('-created_at')[:3]
+
     context = {
         'posts': posts,
         'nav': 'index',
     }
     return render(request, 'index.html', context)
-
-
-def downloads(request):
-    context = {}
-    return render(request, 'downloads.html', context)
 
 
 def custom_404_view(request, exception):
@@ -52,7 +48,7 @@ def post_detail(request, slug):
 
 
 def contact(request):
-    context = {'nav': 'contact',}
+    context = {'nav': 'contact', }
     return render(request, 'contact.html', context)
 
 
@@ -62,20 +58,37 @@ def about_us(request):
 
 
 def notices(request):
-    context = {}
+    party_notices = PDFDocument.objects.filter(category__name="Tenders")
+    context = {'notices': party_notices}
     return render(request, 'notices.html', context)
 
 
 def careers(request):
-    context = {}
+    jobs = PDFDocument.objects.filter(category__name="Careers")
+    context = {'jobs': jobs}
     return render(request, 'careers.html', context)
 
 
 def tenders(request):
-    context = {}
+    open_tenders = PDFDocument.objects.filter(category__name="Tenders")
+    context = {'tenders': open_tenders}
     return render(request, 'tenders.html', context)
 
 
 def financial_statements(request):
-    context = {}
+    finance_statements = PDFDocument.objects.filter(category__name="Financial Statements")
+    context = {'finance_statements': finance_statements}
     return render(request, 'financial-statements.html', context)
+
+
+def party_documents(request):
+    pdfdocs = PDFDocument.objects.filter(category__name="Party Documents")
+    context = {'pdfdocs': pdfdocs}
+    return render(request, 'party-documents.html', context)
+
+
+def leadership(request):
+    leaders = PDFDocument.objects.filter(category__name="Leadership")
+
+    context = {'leaders': leaders}
+    return render(request, 'leadership.html', context)

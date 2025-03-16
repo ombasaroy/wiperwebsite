@@ -63,7 +63,7 @@
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{% url 'about-us' %}">Our History</a></li>
-                  <li><a class="dropdown-item" href="">Leadership</a></li>
+                  <li><a class="dropdown-item" href="{% url 'leadership' %}">Leadership</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -71,7 +71,7 @@
               </li>
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-indicator" href="JavaScript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'downloads' %}">Downloads</a></li>
+                  <li><a class="dropdown-item" href="{% url 'party-documents' %}">Party Documents</a></li>
                   <li><a class="dropdown-item" href="{% url 'notices' %}">Notices</a></li>
                   <li><a class="dropdown-item" href="{% url 'financial-statements' %}">Financial Statements</a></li>
                   <li><a class="dropdown-item" href="{% url 'careers' %}">Careers</a></li>
@@ -79,7 +79,11 @@
                 </ul>
               </li>
               <li class="nav-item"><a class="nav-link {% if nav == 'contact' %} active {% endif %}" href="{% url 'contact' %}">Contact</a></li>
-            </ul><a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0" href="{% url 'index' %}">Become a Member</a>
+            {% for pdf in pdf_documents %}
+                {% if pdf.category.name == 'Misc' %}
+                    </ul><a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0" href="{{ pdf.file.url }}">Become a Member</a>
+                {% endif %}
+            {% endfor %}
           </div>
         </nav>
       </div>
@@ -99,30 +103,38 @@
                 <h5 style="color: #b0b0b0; ">Downloads</h5>
                 <hr style="height: 1px; background-color: #ffffff; border: none;">
 
-              {% comment %} <ul class="list-unstyled footer-links">
+               <ul class="list-unstyled footer-links">
                   
-                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1798O1ViCGFk2xkGDlH20LlUCotKfFK6W/view?usp=drive_link">Party Constitution</a></li>
-                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1lJQoMY_a_WCQNtdMad4fo1f2koNVSMse/view?usp=drive_link">Nomination Rules</a></li>
-                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/19lfVzuVMmEIW6drU6wF88fHw3Tj-WWMf/view?usp=drive_link">Disciplinary Rules</a></li>
-                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1hFs1RwtIcubrCR9B5OOxkBNE8XwazcD2/view?usp=drive_link">Election Appeal Rules</a></li>
-              </ul> {% endcomment %}
-      
-              <ul class="list-unstyled footer-links">
-      
-                {% for pdf in pdf_documents %}
-                <li class="mb-3"><a class="text-white" href="{{pdf.file.url}}">{{pdf.name}}</a></li>
-                {% endfor %}
+                  <li class="mb-3"><a class="text-white" href="{% url 'party-documents' %}">Party Documents</a></li>
+                  <li class="mb-3"><a class="text-white" href="{% url 'financial-statements' %}"> Statements</a></li>
+                  <li class="mb-3"><a class="text-white" href="{% url 'notices' %}">Notices</a></li>
+                  <li class="mb-3"><a class="text-white" href="{% url 'tenders' %}">Tenders</a></li>
+
               </ul>
+      
+{#              <ul class="list-unstyled footer-links">#}
+{#      #}
+{#                {% for pdf in pdf_documents %}#}
+{#                <li class="mb-3"><a class="text-white" href="{{pdf.file.url}}">{{pdf.name}}</a></li>#}
+{#                {% endfor %}#}
+{#              </ul>#}
             </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-white ms-lg-auto">
               <h5 style="color: #b0b0b0">Resources</h5>
               <hr style="height: 1px; background-color: #ffffff; border: none;">
               <ul class="list-unstyled">
-                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1XqlFJjGJ9kZ9wKN_t1c_RcSdV0JZBsEr/view?usp=drive_link">How to Register</a></li>
-                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1O7rZxltoDbpwuO0lBr5zYL3IkMhBG9EC/view?usp=drive_link">Elected Leaders</a></li>
-                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1EhptWmwwBitI09pVuPvueaEm9CoDuhRY/view?usp=sharing">2023 Financial Statements</a></li>
-                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1ZgixhnFevB9ejVw8SnG-J_92klX0_2Vn/view?usp=sharing">NEC Members</a></li>
+                  <li class="mb-3"><a class="text-white" href="{% url 'careers' %}">Careers</a></li>
+                  <li class="mb-3"><a class="text-white" href="{% url 'leadership' %}">Leadership</a></li>
+                  <li class="mb-3"><a class="text-white" href="#">Kalonzo Musyoka Foundation</a></li>
+
+
               </ul>
+{#              <ul class="list-unstyled">#}
+{#                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1XqlFJjGJ9kZ9wKN_t1c_RcSdV0JZBsEr/view?usp=drive_link">How to Register</a></li>#}
+{#                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1O7rZxltoDbpwuO0lBr5zYL3IkMhBG9EC/view?usp=drive_link">Elected Leaders</a></li>#}
+{#                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1EhptWmwwBitI09pVuPvueaEm9CoDuhRY/view?usp=sharing">2023 Financial Statements</a></li>#}
+{#                  <li class="mb-3"><a class="text-white" href="https://drive.google.com/file/d/1ZgixhnFevB9ejVw8SnG-J_92klX0_2Vn/view?usp=sharing">NEC Members</a></li>#}
+{#              </ul>#}
             </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-white ms-lg-auto">
               <h5 style="color: #b0b0b0">Office Location</h5>
