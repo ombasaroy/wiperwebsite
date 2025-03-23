@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} About Us {% endblock %}
+
+{% block main%}
+<section class="bg-100 pb-0">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center fs-2 fs-md-3">Our Story</h3>
+          <hr class="short" data-zanim-xs='{"from":{"opacity":0,"width":0},"to":{"opacity":1,"width":"4.20873rem"},"duration":0.8}' data-zanim-trigger="scroll" />
+        </div>
+        <div class="col-12 ">
+          <div class="bg-white px-3 mt-2 px-0 py-2 px-lg-5 rounded-3">
+            <p class="mt-3" style="text-align: justify;">The Wiper Democratic Movement (WDM) was founded in 2006 by Kenyans committed to promoting democracy, 
+              social justice, and good governance. Our vision is to eliminate entrenched socio-economic inequalities, corruption, and negative 
+              ethnicity while fostering national unity and development. Dedicated to ensuring transparent, accountable, and people-centered 
+              leadership, WDM champions equitable resource distribution, grassroots development, and policies that uplift marginalized 
+              communities.</p>
+
+            <p class="column-lg-2" style="text-align: justify;">Wiper Democratic Movement upholds the Constitution of Kenya 2010 and the rule of law, conducting free, fair, and transparent 
+              elections within the party while promoting leadership based on integrity, competence, and inclusivity. We advocate for policies 
+              that drive economic growth, youth empowerment, gender equality, and peaceful coexistence among all communities. Our guiding 
+              principles include strengthening democracy by encouraging citizen participation in governance, ensuring ethical leadership 
+              at all levels, promoting fairness in resource distribution, maintaining accountability in all party affairs, and giving a 
+              voice to all Kenyans, including women, youth, and marginalized groups. Our core values—democracy, integrity, equity, transparency, 
+              and inclusivity—serve as the foundation for all our actions and policies. We believe in building a united, prosperous, and just 
+              Kenya where all citizens have equal opportunities to succeed. WDM invites all Kenyans to join the movement and be part of shaping 
+              the nation’s future through ethical leadership and progressive governance.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- end of .container-->
+  </section>
+
+       
+  {% include 'includes/leadership.html' %}
+
+
+{% endblock%} 

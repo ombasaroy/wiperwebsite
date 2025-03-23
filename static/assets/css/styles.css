@@ -96,12 +96,30 @@ h3, h5{
     text-shadow: 4px 1px 9px rgb(255, 255, 255);
   }
 .active{
-  color: red;
+  color: red !important;
 }
 
+.fa-brands{
+  font-size: 3rem;
+}
+
+ .rounded-pill2{
+  font-size: 2rem;
+}
+
+ .no-jobs{
+   background-color: #ff8a8a;
+   border-radius: 25px;
+   color: #ffffff;
+   font-weight: 600;
+   text-align: center;
+   padding: 0 4rem;
+ }
 
 
-@media only screen and (max-width:350px) {
+
+
+@media only screen and (max-width:600px) {
   .btn-primary, .btn-warning{
     width: 100%;
   }
@@ -110,6 +128,22 @@ h3, h5{
     text-align: center;
     font-size: 1.5rem;
     text-shadow: 4px 1px 9px rgb(255, 255, 255);
+  }
+
+  .hero-slider{
+    margin-top: 50px;
+  }
+
+  .rounded-pill2{
+    font-size: 14px;
+  }
+
+  .post-title{
+    font-size: 18px;
+  }
+
+  .post-header{
+    font-size: 12px;
   }
 
 }

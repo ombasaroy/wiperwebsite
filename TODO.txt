@@ -1,0 +1,2 @@
+- What does 'related_name' mean
+- VS Code iko not picking recent changes to files

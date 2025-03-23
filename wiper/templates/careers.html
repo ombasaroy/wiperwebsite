@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title  %} Careers {% endblock %}
+
+
+{% block main %}
+
+<section class="bg-100 pb-0">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center fs-2 fs-md-3">Job Adverts</h3>
+          <hr class="short" data-zanim-xs='{"from":{"opacity":0,"width":0},"to":{"opacity":1,"width":"4.20873rem"},"duration":0.8}' data-zanim-trigger="scroll" />
+        </div>
+
+
+      {% if jobs %}
+
+          {% for job in jobs %}
+          <div class="col-12 pt-3 mb-2" style="background-color: #f3f9ff; border-radius: 25px;">
+              <div class="rounded-3">
+                    <p class="mb-2" style="color: #0000a1; font-weight: 600;">{{ forloop.counter }}. {{ job.name }}
+                        <a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0" href="{{ job.file.url }}">Click to View</a>
+                    </p>
+              </div>
+          </div>
+          {% endfor %}
+      {% else %}
+           <div class="col-12 pt-3 mb-2 no-jobs">
+              <div class="rounded-3">
+                    <p class="mb-2">No Open Positions
+                    </p>
+              </div>
+          </div>
+
+
+      {% endif %}
+
+      </div>
+    </div>
+
+</section>
+
+{% endblock %}

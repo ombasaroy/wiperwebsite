@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<section class="bg-100">
+    <div class="container">
+    </ul><a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0" href="{% url 'news' %}">Go to Newsroom</a>
+
+      <div class="overflow-hidden mb-4" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+
+        <h4 data-zanim-xs='{"delay":0.1}' class="post-title">{{ post.title }}</h4>
+        
+        {% if post.author %}
+        <div data-zanim-xs='{"delay":0}'>&nbsp;<a class="d-inline-block text-500 post-header" href="#!">{{ post.created_at }}</a></div>
+        {% else %}
+        <div data-zanim-xs='{"delay":0}'>&nbsp;<a class="d-inline-block text-500 post-header" href="#!">{{ post.created_at }}</a></div>
+        {% endif %}
+
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card mb-6"> <img class="card-img-top" src="{{ post.featured_image.url }}" alt="new image" />
+            <div class="card-body p-2 text-justify">
+              <p class="">{{ post.content|safe }}</p>
+            
+            </div>
+          </div>
+
+          {% comment %} <div class="card">
+            <div class="card-body p-5">
+              <div class="pb-5">
+                <h4>Top Comments</h4>
+                <div class="row my-5">
+                  <div class="col-2 text-center"><img class="rounded-circle img-fluid" src="../assets/img/portrait-8.jpg" style="min-width: 35px" alt="comment author" /></div>
+                  <div class="col-10">
+                    <h5 class="mb-1">Post Heading</h5>
+                    <p class="fs--1 text-500">May 15, 2017 at 9:33 am</p>
+                    <p>Their work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!</p><a class="d-block my-3 text-end me-4" href="#!">Reply</a>
+                    <hr class="muted" />
+                    <div class="row my-4">
+                      <div class="col-2 text-center"><img class="rounded-circle img-fluid" src="../assets/img/square-1.jpg" style="min-width: 35px" alt="comment author" /></div>
+                      <div class="col-10">
+                        <h5 class="mb-1">Post Heading</h5>
+                        <p class="fs--1 text-500">May 15, 2017 at 9:33 am</p>
+                        <p>Writing case studies was a daunting task for us. We didn’t know where to begin or what questions to ask, and clients never seemed to follow through when we asked. Elixir team did everything – with almost no time or effort for me!</p><a class="d-block my-3 text-end me-4" href="#!">Reply</a>
+                      </div>
+                    </div>
+                    <hr class="muted" />
+                  </div>
+                </div>
+                <div class="row my-4">
+                  <div class="col-2 text-center"><img class="rounded-circle img-fluid" src="../assets/img/square-2.jpg" style="min-width: 35px;" alt="comment author" /></div>
+                  <div class="col-10">
+                    <h5 class="mb-1">Post Heading</h5>
+                    <p class="fs--1 text-500">May 15, 2017 at 9:33 am</p>
+                    <p>As a sales gamification company, we were skeptical to work with a consultant to optimize our sales emails, but Elixir was highly recommended by many other Y-Combinator startups we knew. Elixir helped us run a ~6 week email campaign that brought us more leads than we had ever seen for a single effort.</p><a class="d-block my-3 text-end me-4" href="#!">Reply</a>
+                    <hr class="muted" />
+                  </div>
+                </div>
+              </div>
+              <div class="pt-5">
+                <h4>Leave A Comment</h4>
+                <form class="mt-4">
+                  <div class="row">
+                    <div class="col-12"><input class="form-control bg-white" type="text" placeholder="Your Name" aria-label="Your Name" /></div>
+                    <div class="col-12 mt-4"><input class="form-control bg-white" type="email" placeholder="Email" aria-label="Email" /></div>
+                    <div class="col-12 mt-4"><textarea class="form-control bg-white" rows="10" placeholder="Leave your comment here..." aria-label="Leave your comment here"></textarea></div>
+                    <div class="col-12 mt-4"><button class="btn btn-primary" type="Submit">Submit Comment</button></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> {% endcomment %}
+
+
+
+          </ul><a class="btn btn-outline-primary rounded-pill btn-sm border-2 d-block d-lg-inline-block ms-auto my-3 my-lg-0" href="{% url 'news' %}">Go to Newsroom</a>
+        </div>
+        
+        <div class="col-lg-4 text-center ms-auto mt-5 mt-lg-0">
+          <div class="px-2">
+            <div class="card mb-5">
+              <div class="card-body p-5">
+                <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll"><img class="rounded-circle img-fluid" width=100 data-zanim-xs='{"delay":0}' src="{{ post.author.image.url }}" alt="Author" />
+                  <h6 class="text-capitalize mt-3 mb-0" data-zanim-xs='{"delay":0.1}'>Posted by <i>{{ post.author.name }} </i></h6>
+                  <p class="mb-0 mt-3" data-zanim-xs='{"delay":0.2}' style="font-size: 0.8rem;">{{post.author.description }}</p>
+                  <div class="pt-4" data-zanim-xs='{"delay":0.3}'>
+                    <a class="d-inline-block" href="{{ post.author.linkedin_link}}"><span class="fab fa-linkedin fs-2 mx-2 text-400"></span></a>
+                    <a class="d-inline-block" href="{{ post.author.twitter_link}}"><span class="fab fa-twitter-square fs-2 mx-2 text-400"></span></a>
+                    <a class="d-inline-block" href="{{ post.author.facebook_link}}"><span class="fab fa-facebook-square fs-2 mx-2 text-400"></span></a>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <div class="mb-5">
+              <h5 class="mb-4">Recent Articles</h5>
+              <div class="bg-white pb-5 rounded-3">
+                <div class="swiper news-slider pb-4" data-swiper='{"loop":true,"slidesPerView":1,"pagination":{"el":".swiper-pagination","type":"bullets","clickable":true}}'>
+                  <div class="swiper-wrapper">
+
+                    {% for recent_post in recent_posts%}
+                    <div class="swiper-slide">
+                      <div class="card"><a href="news.html"><img class="card-img-top" src="{{ recent_post.featured_image.url }}" alt="Featured Image" /></a>
+                        <div class="card-body" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                          <div class="overflow-hidden">
+                            <a href="{% url 'post_detail' post.slug %}">
+                              <h6 data-zanim-xs='{"delay":0}' style="font-size: 16px;">{{recent_post.title}}</h6>
+                            </a>
+                          </div>
+                          {% comment %} <div class="overflow-hidden">
+                            <p class="text-500" data-zanim-xs='{"delay":0.1}'>{{recent_post.author}}</p>
+                          </div> {% endcomment %}
+                          {% comment %} <div class="overflow-hidden">
+                            <p class="mt-3" data-zanim-xs='{"delay":0.2}'>{{recent_post.content|safe|slice:100}}</p>
+                          </div> {% endcomment %}
+                          <div class="overflow-hidden">
+                            <div class="d-inline-block" data-zanim-xs='{"delay":0.3}'><a class="d-flex align-items-center" href="{% url 'post_detail' post.slug %}">Read article<div class="overflow-hidden ms-2" data-zanim-xs='{"from":{"opacity":0,"x":-30},"to":{"opacity":1,"x":0},"delay":0.8}'><span class="d-inline-block fw-medium">&xrarr;</span></div></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+
+
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+
+            {% comment %} <div class="card">
+              <div class="card-body p-5">
+                <h5>Tags</h5>
+                <ul class="nav tags mt-3 fs--1">
+                  
+                  {% for category in categories %}                  
+                  <li><a class="btn btn-sm btn-outline-primary m-1 p-2" href="#!">{{ category.name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div> {% endcomment %}
+
+          </div>
+        </div>
+      </div>
+
+      
+    </div><!-- end of .container-->
+  </section>
+{% endblock %}
